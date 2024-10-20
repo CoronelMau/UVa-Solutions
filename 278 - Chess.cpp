@@ -11,6 +11,7 @@ int main()
     string piece;
     int w, h;
     cin >> piece >> w >> h;
+
     if (piece == "r" || piece == "Q")
     {
       cout << min(w, h) << endl;
