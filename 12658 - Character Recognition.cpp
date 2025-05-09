@@ -1,36 +1,44 @@
 #include <bits/stdc++.h>
-
 using namespace std;
 
 int main()
 {
-  int n;
-  cin >> n;
-  vector<string> lines(5);
-  cin.ignore();
+  int numbers;
+  cin >> numbers;
+
+  string line;
 
   for (int i = 0; i < 5; i++)
   {
-    getline(cin, lines[i]);
+    string temp;
+    if (i == 3)
+    {
+      cin >> line;
+    }
+    else
+    {
+      cin >> temp;
+    }
   }
 
-  for (int i = 0; i < n; i++)
+  for (int i = 0; i < numbers; i++)
   {
-    string digit = lines[3].substr(i * 4, 3);
-    if (digit == ".*.")
+    int idx = i * 4;
+
+    if (line[idx] == '.' && line[idx + 1] == '*')
     {
       cout << 1;
     }
-    else if (digit == "*..")
+    else if (line[idx] == '*' && line[idx + 1] == '.')
     {
       cout << 2;
     }
-    else if (digit == "..*")
+    else if (line[idx] == '.' && line[idx + 1] == '.')
     {
       cout << 3;
     }
   }
-  cout << endl;
 
+  cout << endl;
   return 0;
 }
